@@ -1,6 +1,6 @@
 import json
 
-with open("sample_data.json", "r") as my_file:
+with open("sample-data.json", "r") as my_file:
     json_string = my_file.read()
 
 data = json.loads(json_string)
@@ -13,7 +13,7 @@ print("=" * 80)
 print("{:<50} {:<20} {:<8} {:<6}".format("DN", "Description", "Speed", "MTU"))
 print("-" * 50, "-" * 20, "-" * 8, "-" * 6)
 
-for interface in interfaces[1:]:
+for interface in interfaces:
     l1_phys_if = interface.get('l1PhysIf', {})
     attributes = l1_phys_if.get('attributes', {})
     
