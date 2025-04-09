@@ -147,14 +147,17 @@ class MusicPlayer():
                 self.queue = json.load(sl)
 
     def volume_up(self):
-        self.volume += 0.07
+        self.volume += 0.05
         if self.volume <= 1.0:
             self.channel.set_volume(self.volume)
         else:
             self.volume = self.channel.get_volume()
+    def get_volume_percent(self):
+        return int(self.volume * 100)
+
 
     def volume_down(self):
-        self.volume -= 0.07
+        self.volume -= 0.05
         if self.volume >= 0:
             self.channel.set_volume(self.volume)
         else:
@@ -166,6 +169,9 @@ Instantiation of the MusicPlayer Class
 '''
 music_player = MusicPlayer()
 music_player.read_songlist("songs.json")
+
+
+volume = 0.7
 
 
 '''
@@ -263,6 +269,10 @@ while loop:
         text2 = font.render(os.path.basename(music_player.queue[music_player.index]), True, (255,255,255))
         print_text(screen, text1, info_rect1)
         print_text(screen, text2, info_rect2)
+        #отображение громкости
+        volume_text = font.render(f"Volume: {music_player.get_volume_percent()}%", True, (255, 255, 255))
+        screen.blit(volume_text, (10, 420))
+
 
     pygame.display.flip()
     clock.tick(90)

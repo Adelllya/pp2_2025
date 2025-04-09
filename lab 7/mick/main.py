@@ -51,7 +51,5 @@ while run:
     screen.blit(leg2, rect2)
     
 
-    #screen.blit(background, (0, 0))
-    #pg.draw.circle(screen, (0, 0, 0), (500, 500), 490, 5)
     pg.display.flip()
     clock.tick(60)
