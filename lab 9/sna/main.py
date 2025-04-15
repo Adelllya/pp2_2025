@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 
-# Инициализация Pygame
+
 pygame.init()
 
 # Размеры экрана
@@ -10,20 +10,20 @@ WIDTH, HEIGHT = 600, 600
 CELL_SIZE = 20  # Размер клетки сетки
 COLS, ROWS = WIDTH // CELL_SIZE, HEIGHT // CELL_SIZE
 
-# Цвета
+#Цвета
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 RED   = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLUE  = (0, 0, 255)
 
-# Настройка окна
+
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snake Game")
 
-# Таймер (скорость игры)
+
 clock = pygame.time.Clock()
-FPS = 3  # начальная скорость (в дальнейшем будет увеличиваться)
+FPS = 3
 
 # Шрифт
 font = pygame.font.SysFont('Arial', 24)
